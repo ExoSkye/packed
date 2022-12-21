@@ -28,7 +28,7 @@
 #ifdef __GNUC__
 #define PACKED_STRUCT(__decl__) struct __attribute__((packed)) __decl__
 #elif defined(_MSC_VER)
-#define PACKED_STRUCT(__decl__) __pragma( pack(push, 1) ) __decl__ __pragma( pack(pop))
+#define PACKED_STRUCT(__decl__) __pragma( pack(push, 1) ) struct __decl__ __pragma( pack(pop))
 #elif defined(__clang__)
 #define PACKED_STRUCT(__decl__) struct __attribute__((packed)) __decl__
 #else
