@@ -33,7 +33,9 @@ struct b {
 
 This is the same for C++, however, you'd use `sizeof(a)` instead of `sizeof(struct a)`.
 
-You only need to copy `packed.h` into your project, all other files aren't essential. (`main.c` and `main.cpp` are just used for testing)
+You only need to copy `packed.h` into your project, all other files aren't essential. (`main.c` and `main.cpp` are just used for testing).
+
+This library is also compatible with the widely used `typdef struct x {} x;` pattern used in C, you just need to replace `struct x {}` in that example with `PACKED_STRUCT(x {})`.
 
 ## Compiler Support
 
