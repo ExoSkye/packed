@@ -50,6 +50,9 @@ These compilers are known to work:
 - Clang (tested 14.0.6)
 - GCC (tested 12.2.0)
 - MSVC (tested v19.33)
+- TCC (tested 0.9.27)
+- SDCC (tested 4.1.0)
+- CC65 (tested 2.19)
 
 If the compiler you use (idk, `icc`?) isn't listed on here then it currently isn't supported, however, feel free to submit a pull request updating `packed.h` to be able to support your compiler.
 
