@@ -51,8 +51,8 @@ These compilers are known to work:
 - GCC (tested 12.2.0)
 - MSVC (tested v19.33)
 - TCC (tested 0.9.27)
-- SDCC (tested 4.1.0)
-- CC65 (tested 2.19)
+- SDCC (tested 4.1.0) (No support for packed structs)
+- CC65 (tested 2.19) (No support for packed structs)
 - ICC (tested 2021.7.1)
 
 If the compiler you use (idk, `icc`? - UPDATE: icc is basically GCC so it's supported) isn't listed on here then it currently isn't supported, however, feel free to submit a pull request updating `packed.h` to be able to support your compiler.
