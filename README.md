@@ -2,6 +2,12 @@
 
 This is a simple header only C/C++ library that adds a more portable macro for defining a macro as being packed, since most compilers have different ways of defining it.
 
+## Important Notes
+
+As tempting as it might be, do not use packed structs in public interfaces (ie. in libraries' public header files) since compilers don't agree on what packing means (hence why it is non-portable), you'll end up with issues where if someone uses the compiled version with a different compiler, things just won't work. As a result of this, you can use packed structs within the library, but you can't use them in the interface.
+
+TL;DR: Don't use this is in a public interface for a library (ie. the installed header file(s)).
+
 ## How to use this library
 
 ```c
