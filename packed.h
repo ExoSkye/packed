@@ -26,23 +26,23 @@
 
 
 #ifdef __GNUC__
-    #define PACKED_STRUCT(__decl__) struct __attribute__((packed)) __decl__
+    #define PACKED_STRUCT(...) struct __attribute__((packed)) __VA_ARGS__
 #elif defined(_MSC_VER)
-    #define PACKED_STRUCT(__decl__) __pragma( pack(push, 1) ) __decl__ __pragma( pack(pop))
+    #define PACKED_STRUCT(...) __pragma( pack(push, 1) ) __VA_ARGS__ __pragma( pack(pop))
 #elif defined(__clang__)
-    #define PACKED_STRUCT(__decl__) struct __attribute__((packed)) __decl__
+    #define PACKED_STRUCT(...) struct __attribute__((packed)) __VA_ARGS__
 #elif defined(__CC65__)
     #warning This compiler (CC65) does not support packed structs
-    #define PACKED_STRUCT(__decl__) struct __decl__
+    #define PACKED_STRUCT(...) struct __VA_ARGS__
 #elif defined(__SDCC)
     #warning This compiler (SDCC) does not support packed structs
-    #define PACKED_STRUCT(__decl__) struct __decl__
+    #define PACKED_STRUCT(...) struct __VA_ARGS__
 #elif defined(__TINYC__)
-    #define PACKED_STRUCT(__decl__) struct __attribute__((packed)) __decl__
+    #define PACKED_STRUCT(...) struct __attribute__((packed)) __VA_ARGS__
 #else
     #ifndef UNSUPPORTED_COMPILER_WARNING
         #define UNSUPPORTED_COMPILER_WARNING
         #warning This library does not currently have support for your compiler, consider submitting a pull-request for it?
-        #define PACKED_STRUCT(__decl__) struct __decl__
+        #define PACKED_STRUCT(...) struct __VA_ARGS__
     #endif
 #endif
