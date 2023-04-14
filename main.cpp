@@ -2,14 +2,12 @@
 #include <cstdio>
 
 int main() {
-    PACKED_STRUCT(
-        a {
+    packed_struct a {
             int a;
             char b;
             short c;
             int d;
-        }
-    );
+        };
 
     struct b {
         int a;

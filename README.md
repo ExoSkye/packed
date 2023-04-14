@@ -17,14 +17,12 @@ TL;DR: Don't use this is in a public interface for a library (ie. the installed 
 
 // Packed struct
 
-PACKED_STRUCT(
-    a {
-        int a;
-        char b;
-        short c;
-        int d;
-    }
-);
+packed_struct a {
+    int a;
+    char b;
+    short c;
+    int d;
+};
 
 // Non-packed struct
 struct b {
@@ -41,7 +39,7 @@ This is the same for C++, however, you'd use `sizeof(a)` instead of `sizeof(stru
 
 You only need to copy `packed.h` into your project, all other files aren't essential. (`main.c` and `main.cpp` are just used for testing).
 
-This library is also compatible with the widely used `typedef struct x {} x;` pattern used in C, you just need to replace `struct x {}` in that example with `PACKED_STRUCT(x {})`.
+This library is also compatible with the widely used `typedef struct x {} x;` pattern used in C, you just need to replace `struct x {}` in that example with `packed_struct x {}`.
 
 ## Compiler Support
 

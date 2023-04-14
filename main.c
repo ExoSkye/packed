@@ -1,14 +1,12 @@
 #include "packed.h"
 #include <stdio.h>
 
-typedef PACKED_STRUCT(
-        a {
+typedef packed_struct a {
             int a;
             char b;
             short c;
             int d;
-        }
-    ) a;
+        } a;
 
 int main() {
 
